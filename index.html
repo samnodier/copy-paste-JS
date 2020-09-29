@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta viewport="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery Copy and Paste</title>
+	<style type="text/css">
+		* {
+			box-sizing:border-box;
+		    font-family: arial, hervetica, sans-serif;
+		}
+		.container {
+		    width: 100%;
+		    padding: 5rem;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.container div {
+			width: 100%;
+		    display: grid;
+		    grid-template-columns: 10fr 2fr;
+		    grid-gap: 1rem;
+		}
+
+		.container > div > div {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+		}
+
+		.text-container {
+		    background: rgba(0,0,0,.1);
+		    box-shadow: inset 0 0 5px black;
+		    border-radius: 10px;
+		    width: 100%;
+		    height: 7rem;
+		    margin: 0;
+		    padding: 0;
+		}
+
+		.text-container .text {
+			margin: 0;
+		    padding: 10px;
+			width: inherit;
+			height: inherit;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+
+		button {
+		    height: 3rem;
+		    width: 4.5rem;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    cursor: pointer;
+		    text-align: center;
+		    align-self: center;
+		    justify-content: center;
+		    margin: 0 auto;
+		}
+
+		textarea {
+		    width: 100%;
+		    height: 7rem;
+		    resize: none;
+		    font-size: 1.05rem;
+		    padding: 10px;
+		    margin: 1rem 0;
+		}
+
+		.text::-webkit-scrollbar-thumb:hover, textarea::-webkit-scrollbar-thumb:hover{
+		    background: #777;
+		}
+		.text::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
+		    background: #aaaaaa;
+		    border-radius: 10px;
+		}
+		.text::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
+		    background: #eeeeee;
+		    box-shadow: inset 0 0 3px black;
+		    border-radius: 10px;
+		}
+		.text::-webkit-scrollbar, textarea::-webkit-scrollbar {
+		    width: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3>Please copy the text below and paste it in the text area beneath it.</h3>
+		<div>
+			<div class="text-container">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div>
+				<button id="cut">Cut</button>
+				<button id="copy">Copy</button>
+			</div>
+		</div>
+		<div>
+			<textarea placeholder="Paste here"></textarea>
+			<button id="paste">Paste</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
